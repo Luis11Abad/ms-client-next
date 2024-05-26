@@ -1,5 +1,35 @@
 {
-    "Test": {
-        "test": "This is a test"
+    "Account": {
+        "sign-out": "Sign out"
+    },
+    "Auth": {
+        "account-question": "Already have an account?",
+        "email": "Email",
+        "forgot-your-password-question": "Forgot your password?",
+        "full-name": "Full name",
+        "login-title": "Welcome back",
+        "new-password": "New password",
+        "no-account-question": "Don't have an account?",
+        "no-received-code-question": "Did you not receive the code?",
+        "password": "Password",
+        "password-recovery-instructions": "Enter your recovery code and your new password",
+        "password-recovery-submit": "Change password",
+        "password-recovery-title": "Recover your password",
+        "phone": "Phone (Optional)",
+        "recovery-code": "Recovery code",
+        "register-title": "Create an account",
+        "remember-your-password-question": "Did you remember your password?",
+        "resend": "Resend",
+        "send-password-recovery-instructions": "We will send you an email with a recovery code",
+        "send-password-recovery-submit": "Send code",
+        "sign-in": "Sign in",
+        "sign-up": "Sign up",
+        "verify-instructions": "Enter the confirmation code that we have sent to your email address.",
+        "verify-submit": "Continue",
+        "verify-title": "Email verification"
+    },
+    "Errors": {
+        "oauth": "Something went wrong retrieving your user data",
+        "register-mode": "Your account was registered with another method"
     }
 }

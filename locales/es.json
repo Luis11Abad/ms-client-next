@@ -1,5 +1,35 @@
 {
-    "Test": {
-        "test": "Esto es una prueba"
+    "Account": {
+        "sign-out": "Cerrar sesión"
+    },
+    "Auth": {
+        "account-question": "¿Ya tienes cuenta?",
+        "email": "Correo electrónico",
+        "forgot-your-password-question": "¿Olvidaste tu contraseña?",
+        "full-name": "Nombre completo",
+        "login-title": "Bienvenido de nuevo",
+        "new-password": "Nueva contraseña",
+        "no-account-question": "¿No tienes cuenta?",
+        "no-received-code-question": "¿No has recibido el código?",
+        "password": "Contraseña",
+        "password-recovery-instructions": "Introduce el código de recuperación y tu nueva contraseña",
+        "password-recovery-submit": "Cambiar contraseña",
+        "password-recovery-title": "Recupera tu contraseña",
+        "phone": "Teléfono (opcional)",
+        "recovery-code": "Código de recuperación",
+        "register-title": "Crear cuenta",
+        "remember-your-password-question": "¿Has recordado tu contraseña?",
+        "resend": "Reenviar",
+        "send-password-recovery-instructions": "Te enviaremos un email con un código de recuperación",
+        "send-password-recovery-submit": "Enviar código",
+        "sign-in": "Iniciar sesión",
+        "sign-up": "Registrate",
+        "verify-instructions": "Introduce el código de confirmación que hemos enviado a tu correo electrónico.",
+        "verify-submit": "Continuar",
+        "verify-title": "Verifica tu email"
+    },
+    "Errors": {
+        "oauth": "Hubo un error recuperando la información de tu cuenta",
+        "register-mode": "Tu cuenta fue registrada con otro método"
     }
 }
