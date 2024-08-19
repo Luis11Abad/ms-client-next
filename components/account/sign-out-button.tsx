@@ -2,7 +2,7 @@
 
 import { handleSession } from "@/lib/actions"
 
-import Logout from '@/components/ui/icons/logout.svg'
+import Logout from "@/components/ui/icons/logout.svg"
 
 export default function SignOutButton({ label }: { label: string}){
     async function logout() {

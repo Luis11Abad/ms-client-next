@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
-import Facebook from '@/components/ui/icons/facebook.svg'
+import Facebook from "@/components/ui/icons/facebook.svg"
 import LoginForm from "@/components/auth/login/form"
 import { Link } from "@/navigation"
 import GoogleBtn from "@/components/auth/login/google-btn"

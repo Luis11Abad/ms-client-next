@@ -2,7 +2,7 @@ import { getUser } from "@/lib/dal"
 import { getTranslations } from "next-intl/server"
 
 import { Link } from "@/navigation"
-import User from '@/components/ui/icons/user.svg'
+import User from "@/components/ui/icons/user.svg"
 
 
 export default async function AccountBtn() {

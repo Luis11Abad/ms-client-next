@@ -1,9 +1,9 @@
 import { getUser } from "@/lib/dal"
 import { useTranslations } from "next-intl"
 import SignOutButton from "./sign-out-button"
-import Book from '@/components/ui/icons/book.svg'
-import Events from '@/components/ui/icons/events.svg'
-import UserData from '@/components/ui/icons/user-data.svg'
+import Book from "@/components/ui/icons/book.svg"
+import Events from "@/components/ui/icons/events.svg"
+import UserData from "@/components/ui/icons/user-data.svg"
 import SideMenuButton from "./side-menu-button"
 
 interface SideMenuLink {

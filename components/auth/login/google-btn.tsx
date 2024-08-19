@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from "../../ui/button"
-import Google from '@/components/ui/icons/google.svg'
+import Google from "@/components/ui/icons/google.svg"
 
 export default function GoogleBtn() {
     function redirectToProvider() {

@@ -1,9 +1,9 @@
 import { useLocale, useTranslations } from "next-intl"
-import { locales } from '@/navigation'
+import { locales } from "@/navigation"
 
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { Button } from "./ui/button"
-import Lang from '@/components/ui/icons/lang.svg'
+import Lang from "@/components/ui/icons/lang.svg"
 import LangPickerBtn from "./auth/lang-picker/btn"
 
 export default function LangPicker(){
