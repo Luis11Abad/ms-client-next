@@ -1,11 +1,11 @@
 import { cache } from "react"
-import { get } from "@/lib/utils/fetch"
+import { Methods, doFetch } from "@/lib/utils/fetch"
 
 export const getUser = cache(async () => {
     try {
-        const { data, statusCode } = await get('/auth/session', {})
+        const { data, statusCode } = await doFetch('/auth/session', Methods.GET)
         
-        return (statusCode >= 400) ? null : data
+        return statusCode >= 400 ? null : data
     } catch (error) {
         return null
     }

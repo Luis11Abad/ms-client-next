@@ -1,5 +1,10 @@
 {
     "Account": {
+        "address-book": "Lista de contactos",
+        "hello": "¡Hola, {name}!",
+        "my-events": "Mis eventos",
+        "personal-data": "Mis datos personales",
+        "save-changes": "Guardar cambios",
         "sign-out": "Cerrar sesión"
     },
     "Auth": {
@@ -31,5 +36,12 @@
     "Errors": {
         "oauth": "Hubo un error recuperando la información de tu cuenta",
         "register-mode": "Tu cuenta fue registrada con otro método"
+    },
+    "Langs": {
+        "en": "English",
+        "es": "Español",
+        "fr": "Français",
+        "it": "Italiano",
+        "select": "Selecciona tu idioma"
     }
 }

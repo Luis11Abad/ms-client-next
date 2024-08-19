@@ -1,12 +1,15 @@
-import TopBar from "./auth/header/top-bar"
+import { Link } from "@/navigation"
+import AccountBtn from "./auth/header/account-btn"
+import LangPicker from "./lang-picker"
 
 export default function Header(){
     return (
-        <header className="flex flex-col border-b">
-            <TopBar/>
-            <div className="h-16 flex justify-center items-center">
-                <div className="w-full max-w-7xl">
-                    <h1 className="text-2xl font-black">invitare</h1>
+        <header className="flex justify-center items-center py-5 border-b">
+            <div className="w-full max-w-7xl flex items-center justify-between">
+                <Link href='/'><h1 className="text-xl font-bold">InvitareCo</h1></Link>
+                <div className="flex gap-x-4">
+                    <AccountBtn/>
+                    {/* <LangPicker/> */}
                 </div>
             </div>
         </header>

@@ -24,6 +24,10 @@ export default function LoginForm({ externalError, translations } : { externalEr
         if (externalError) setError(externalError)
     }, [externalError])
 
+    useEffect(() => {
+        if(error != null) setTimeout(() => setError(undefined), 5000)
+    }, [error])
+
     function submit(formData: FormData){
         setError(undefined)
         auth('login', formData).then(res => {

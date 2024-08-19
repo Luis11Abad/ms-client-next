@@ -1,13 +1,12 @@
-import SignOutButton from "@/components/account/sign-out-button"
-import { useTranslations } from "next-intl"
+import PersonalDataForm from "@/components/account/personal-data/form"
+import { getUser } from "@/lib/dal"
+import { getTranslations } from "next-intl/server"
 
-export default function Account() {
-    const t = useTranslations("Account")
+export default async function Account() {
+    const user = await getUser()
+    const t = await getTranslations()
     
-    return (
-        <>
-            <h1>Account</h1>
-            <SignOutButton label={t('sign-out')}/>
-        </>
-    )
+    return <>
+        <PersonalDataForm user={user} translations={{ name: t('Auth.full-name'), email: t('Auth.email'), phone: t('Auth.phone'), submit: t('Account.save-changes')}}/>
+    </>
 }

@@ -1,14 +1,17 @@
-import { getUser } from "@/lib/dal"
+import SideMenu from "@/components/account/side-menu"
+import SectionTitle from "@/components/account/section-title"
 
 export default async function AccountLayout({ children }: { children: React.ReactNode }) {
-    const user = await getUser()
 
     return (
         <>
-            <main className="flex flex-col flex-1">
-                {JSON.stringify(user)}
-                {children}
-            </main>
+            <div className="flex mx-auto w-full max-w-7xl gap-x-6">
+                <SideMenu/>
+                <div className="flex flex-col flex-1 overflow-hidden">
+                    <SectionTitle/>
+                    {children}
+                </div>
+            </div>
         </>
     )
 }

@@ -1,5 +1,3 @@
-import { JwtPayload } from "jwt-decode"
-
 export interface ApiResponse {
     data: any
     message: string
@@ -9,4 +7,13 @@ export interface ApiResponse {
 export interface AuthResponse {
     isVerified: boolean
     token: string
+}
+
+export enum ContentType {
+    About = "about",
+    Blog = "blog",
+    FAQ = "faq",
+    Feature = "feature",
+    Policy = "policy",
+    Social = "social",
 }

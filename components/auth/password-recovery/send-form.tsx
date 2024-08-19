@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useFormStatus } from "react-dom"
 import { Input } from "@/components/ui/input"
 import { auth } from "@/lib/actions"
@@ -22,6 +22,10 @@ export default function SendPasswordRecoveryForm({ translations } : { translatio
     const { replace } = useRouter()
     const { pending } = useFormStatus()
     const [error, setError] = useState<string|undefined>()
+
+    useEffect(() => {
+        if(error != null) setTimeout(() => setError(undefined), 5000)
+    }, [error])
 
     function submit(formData: FormData){
         setError(undefined)

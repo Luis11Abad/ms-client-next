@@ -1,5 +1,10 @@
 {
     "Account": {
+        "address-book": "Address Book",
+        "hello": "Hi, {name}!",
+        "my-events": "My Events",
+        "personal-data": "Personal Data",
+        "save-changes": "Save changes",
         "sign-out": "Sign out"
     },
     "Auth": {
@@ -31,5 +36,12 @@
     "Errors": {
         "oauth": "Something went wrong retrieving your user data",
         "register-mode": "Your account was registered with another method"
+    },
+    "Langs": {
+        "en": "English",
+        "es": "Español",
+        "fr": "Français",
+        "it": "Italiano",
+        "select": "Select your language"
     }
 }

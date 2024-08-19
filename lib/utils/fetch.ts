@@ -1,34 +1,44 @@
 import { cookies } from "next/headers"
 import { ApiResponse } from "../definitions"
+import { defaultLocale } from "@/navigation"
 
-export async function get(path: string, params: any){
-    const token = cookies().get('session')?.value
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${path}?${new URLSearchParams(params).toString()}`, {
+export enum Methods {
+    GET = 'GET',
+    POST = 'POST',
+    PATCH = 'PATCH',
+    DELETE = 'DELETE'
+}
+
+export async function doFetch(path: string, method: Methods, params?: any, formData?: FormData){
+    const headers = getHeaders()
+
+    let queryString = method == Methods.GET ? new URLSearchParams(params).toString() : ''
+    queryString = queryString != '' ? `?${queryString}` : ''
+
+    let options: any = {
+        method,
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': token ? `Bearer ${token}` : ''
+            'Authorization': headers.token,
+            'Accept-Language': headers.lang
         },
-    })
+        body: method == Methods.GET ? null : JSON.stringify(Object.fromEntries(formData ?? new FormData()))
+    }
+
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${path}${queryString}`, options)
 
     const parsedRes = await res.json()
 
     return formatResponse(parsedRes)
 }
 
-export async function post(path: string, formData: FormData){
+function getHeaders() {
     const token = cookies().get('session')?.value
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${path}`, {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': token ? `Bearer ${token}` : ''
-        },
-        body: JSON.stringify(Object.fromEntries(formData))
-    })
-
-    const parsedRes = await res.json()
-
-    return formatResponse(parsedRes)
+    const lang = cookies().get('NEXT_LOCALE')?.value
+    return {
+        token: token ? `Bearer ${token}` : '',
+        lang: lang ?? defaultLocale
+    }
 }
 
 function formatResponse(result: any): ApiResponse {

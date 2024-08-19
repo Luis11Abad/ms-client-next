@@ -8,7 +8,7 @@ export default function Register() {
 
     return (
         <div className="w-full flex flex-col max-w-sm p-8 ">
-            <RegisterForm translations={{ email: t('email'), name: t('full-name'), password: t('password'), submit: t('sign-up'), title: t('register-title')}}/>
+            <RegisterForm translations={{ email: t('email'), name: t('full-name'), password: t('password'), phone: t('phone'), submit: t('sign-up'), title: t('register-title')}}/>
             <p className="text-sm text-zinc-500 mt-6 text-center">{t('account-question')} <Link className="text-black underline" href={`/auth/login`}>{t('sign-in')}</Link>.</p>
         </div>
     )

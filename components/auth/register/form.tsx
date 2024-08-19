@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useFormStatus } from "react-dom"
 import { Input } from "@/components/ui/input"
 import { auth } from "@/lib/actions"
@@ -12,6 +12,7 @@ interface Translations {
     email: string
     name: string
     password: string
+    phone: string
     submit: string
     title: string
 }
@@ -19,6 +20,10 @@ interface Translations {
 export default function RegisterForm({ translations } : { translations: Translations }){
     const { pending } = useFormStatus()
     const [error, setError] = useState<string|undefined>()
+
+    useEffect(() => {
+        if(error != null) setTimeout(() => setError(undefined), 5000)
+    }, [error])
 
     function submit(formData: FormData){
         setError(undefined)
@@ -34,6 +39,8 @@ export default function RegisterForm({ translations } : { translations: Translat
             <Input type="text" name="name" placeholder="Luka Absa" className="mb-4"/>
             <p className="text-sm font-semibold mb-1.5">{translations.email}</p>
             <Input type="text" name="email" placeholder="luka.absa@invitare.co" className="mb-4"/>
+            <p className="text-sm font-semibold mb-1.5">{translations.phone}</p>
+            <Input type="tel" placeholder="777 77 77 77" name="phone"/>
             <p className="text-sm font-semibold mb-1.5">{translations.password}</p>
             <Input type="password" autoComplete="new-password" placeholder="********" name="password"/>
             { error && <ErrorAlert error={error}/>}

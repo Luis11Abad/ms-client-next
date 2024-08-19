@@ -1,7 +1,7 @@
 'use server'
 
 import { redirect } from "@/navigation"
-import { post } from "./utils/fetch"
+import { Methods, doFetch } from "./utils/fetch"
 import { createSession, deleteSession } from "./session"
 import { isRedirectError } from 'next/dist/client/components/redirect'
 
@@ -9,7 +9,7 @@ const defaultErrorMessage = '500 Internal Server Error'
 
 export async function auth(endpoint: string, formData: FormData) {
     try {
-        const { data, message, statusCode } = await post(`/auth/${endpoint}`, formData)
+        const { data, message, statusCode } = await doFetch(`/auth/${endpoint}`, Methods.POST, {}, formData)
 
         if (!data || !data.token) return { data, message, statusCode }
 
@@ -45,14 +45,18 @@ export async function handleSession(token: string | null) {
     }
 }
 
-export async function exec(endpoint: string, formData: FormData) {
-    try { 
-        const res = await post(endpoint, formData)
-        return res
+export async function updateUser(formData: FormData) {
+    try {
+        
+        const { data, message, statusCode } = await doFetch('/auth', Methods.PATCH, {}, formData)
+
+        return { data, message, statusCode }  
     } catch(err) {
+        if(isRedirectError(err)) throw err
         return { 
             statusCode: 500,
             message: defaultErrorMessage
         }
+        
     }
 }

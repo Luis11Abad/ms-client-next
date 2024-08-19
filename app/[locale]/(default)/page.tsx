@@ -1,3 +1,4 @@
+import HomeFeatures from "@/components/home/features"
 import { redirect } from "@/navigation"
 
 export default async function Home({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
@@ -7,6 +8,7 @@ export default async function Home({ searchParams }: { searchParams: { [key: str
     return (
         <>
             <h1>Home</h1>
+            <HomeFeatures/>
         </>
     )
 }

@@ -1,15 +1,16 @@
 import createMiddleware from 'next-intl/middleware'
-import { authRoutes, locales, protectedRoutesSegments } from './navigation'
+import { authRoutes, defaultLocale, locales, protectedRoutesSegments } from './navigation'
 import { NextResponse, NextRequest } from 'next/server'
 import { jwtVerify } from 'jose'
 import { cookies } from 'next/headers'
- 
+
 const intlMiddleware = createMiddleware({
     locales,
-    defaultLocale: 'es'
+    defaultLocale
 })
 
 export default async function middleware(req: NextRequest) {
+    
     const [, locale, ...segments] = req.nextUrl.pathname.split('/')
 
     const token = await cookies().get('session')?.value

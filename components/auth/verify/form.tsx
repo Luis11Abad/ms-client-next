@@ -1,7 +1,7 @@
 'use client'
 
 import { auth } from "@/lib/actions"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useFormStatus } from "react-dom"
 import { Button } from "@/components/ui/button"
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp"
@@ -16,6 +16,10 @@ interface Translations {
 export default function VerificationForm({ translations }: { translations: Translations }){
     const { pending } = useFormStatus()
     const [error, setError] = useState<string|undefined>()
+
+    useEffect(() => {
+        if(error != null) setTimeout(() => setError(undefined), 5000)
+    }, [error])
 
     function submit(formData: FormData){
         setError(undefined)
