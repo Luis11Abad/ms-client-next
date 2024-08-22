@@ -17,3 +17,12 @@ export enum ContentType {
     Policy = "policy",
     Social = "social",
 }
+
+export interface ContentListItem {
+    description?: string
+    image?: string
+    slug: string
+    title: string
+}
+
+export type ContentList = ContentListItem[]
