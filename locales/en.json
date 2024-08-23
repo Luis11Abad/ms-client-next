@@ -37,6 +37,9 @@
         "oauth": "Something went wrong retrieving your user data",
         "register-mode": "Your account was registered with another method"
     },
+    "Footer": {
+        "copyright": "©Copyright #year#, All Rights Reserved by #company#"
+    },
     "Langs": {
         "en": "English",
         "es": "Español",

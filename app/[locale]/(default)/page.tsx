@@ -1,4 +1,5 @@
 import HomeFeatures from "@/components/home/features"
+import Card from "@/components/ui/card"
 import { redirect } from "@/navigation"
 
 export default async function Home({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
@@ -6,9 +7,9 @@ export default async function Home({ searchParams }: { searchParams: { [key: str
     if(searchParams.oae) redirect(`/auth/login?err=${searchParams.oae}`)
 
     return (
-        <>
-            <h1>Home</h1>
+        <div className="bg-cyan-900">
+            <Card/>
             <HomeFeatures/>
-        </>
+        </div>
     )
 }

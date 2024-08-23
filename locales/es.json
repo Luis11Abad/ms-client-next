@@ -37,11 +37,13 @@
         "oauth": "Hubo un error recuperando la información de tu cuenta",
         "register-mode": "Tu cuenta fue registrada con otro método"
     },
+    "Footer": {
+        "copyright": "©Copyright #year#, Todos los Derechos Reservados por #company#"
+    },
     "Langs": {
         "en": "English",
         "es": "Español",
         "fr": "Français",
-        "it": "Italiano",
-        "select": "Selecciona tu idioma"
+        "it": "Italiano"
     }
 }

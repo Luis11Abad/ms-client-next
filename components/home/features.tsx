@@ -5,7 +5,7 @@ import Image from "next/image"
 export default async function HomeFeatures() {
     const data: ContentList = await getFeatures()
     return <section id="e-invites-features" className="flex justify-center bg-white py-12">
-        <div className="w-full max-w-7xl">
+        {data && <div className="w-full max-w-7xl">
             <h1 className="text-2xl font-semibold text-center">¿Por qué utilizar Invitare?</h1>
             <div className="flex py-12">
                 {data.map(item => 
@@ -17,5 +17,6 @@ export default async function HomeFeatures() {
                 )}
             </div>
         </div>
+        }
     </section>
 }
